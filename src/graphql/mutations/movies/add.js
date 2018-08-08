@@ -1,5 +1,5 @@
 import Movie from '../../../schemas/movies';
-import { MovieType, InputType } from '../../types/movies';
+import { MovieType, MovieInputType } from '../../types/movies';
 import * as graphql from 'graphql';
 
 export default {
