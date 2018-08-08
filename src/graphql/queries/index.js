@@ -1,5 +1,11 @@
 import users from './users';
+import movies from './movies';
+import genres from './genres';
+import ratings from './ratings';
 
 export default {
-    ...users
+    ...users,
+    ...movies,
+    ...genres,
+    ...ratings
 }
