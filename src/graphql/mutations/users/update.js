@@ -1,5 +1,5 @@
-import User from '../../../schemas/genres';
-import { UserType, UserInputType } from '../../types/genres';
+import User from '../../../schemas/users';
+import { UserType, UserInputType } from '../../types/user';
 import * as graphql from 'graphql';
 
 export default {
