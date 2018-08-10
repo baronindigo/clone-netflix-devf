@@ -7,7 +7,7 @@ import { createToken } from './src/resolvers/create';
 import { verifyToken } from './src/resolvers/verify';
 import graphQLHTTP from "express-graphql";
 import schema from './src/graphql';
-
+import cors from 'cors';
 
 const jsonParser = bodyParser.json();
 
@@ -24,9 +24,10 @@ db.on('error',() => console.log('Failed to connect to mongoDB'))
     .once('open',()=> console.log('Connected to MongoDB'));
 
 app.listen(port, () => {
-    console.log('Server Works on port 3000');
+    console.log('Server Works on port' +port);
 })
 
+app.use((cors()));
 
 app.get('/', (req,res) => {
     res.send("Hello World");
@@ -120,8 +121,25 @@ app.use('/verifyToken', jsonParser, (req, res) => {
     }
 })
 
+// Middleare
+app.use('/graphql', (req, res, next) => {
+    const token = req.headers['authorization']
+
+    try {
+        req.user = verifyToken(token)
+        next();
+    } catch(e) {
+        res.status(401).json({
+            message: e.message
+        })
+    }
+});
+
 app.use('/graphql', graphQLHTTP((req, res) => ({
     schema,
     graphiql: true,
     pretty : true,
+    context : {
+        user: req.user
+    }
 })))
