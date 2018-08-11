@@ -42,7 +42,7 @@ var jsonParser = _bodyParser2.default.json();
 
 var app = (0, _express2.default)();
 
-var port = process.env.Port || 3000;
+var PORT = process.env.PORT || 3000;
 
 //mongoose.connect('mongodb://gabo:gabo2018@ds111492.mlab.com:11492/clone-netflix2018');
 _mongoose2.default.connect('mongodb://carlos:carlos2018@ds113402.mlab.com:13402/clone-netflix2018');
@@ -55,8 +55,8 @@ db.on('error', function () {
     return console.log('Connected to MongoDB');
 });
 
-app.listen(port, function () {
-    console.log('Server Works on port' + port);
+app.listen(PORT, function () {
+    console.log('Server Works on port' + PORT);
 });
 
 app.use((0, _cors2.default)());
