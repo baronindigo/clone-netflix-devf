@@ -13,7 +13,7 @@ const jsonParser = bodyParser.json();
 
 const app = express();
 
-const port = process.env.Port || 3000 ;
+const PORT = process.env.PORT || 3000 ;
 
 //mongoose.connect('mongodb://gabo:gabo2018@ds111492.mlab.com:11492/clone-netflix2018');
 mongoose.connect('mongodb://carlos:carlos2018@ds113402.mlab.com:13402/clone-netflix2018');
@@ -23,8 +23,8 @@ const db = mongoose.connection;
 db.on('error',() => console.log('Failed to connect to mongoDB'))
     .once('open',()=> console.log('Connected to MongoDB'));
 
-app.listen(port, () => {
-    console.log('Server Works on port' +port);
+app.listen(PORT, () => {
+    console.log('Server Works on port' +PORT);
 })
 
 app.use((cors()));
