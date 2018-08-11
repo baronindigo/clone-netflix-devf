@@ -1,5 +1,5 @@
-import Rating from '../../../schemas/genres';
-import { RatingType, RatingInputType } from '../../types/genres';
+import Rating from '../../../schemas/ratings';
+import { RatingType, RatingInputType } from '../../types/rating';
 import * as graphql from 'graphql';
 
 export default {

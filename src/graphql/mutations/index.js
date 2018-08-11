@@ -1,6 +1,6 @@
 import genres from './genres';
 import movies from './movies';
-import ratings from './genres';
+import ratings from './ratings';
 import users from './users';
 
 export default {

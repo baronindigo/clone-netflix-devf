@@ -1,4 +1,4 @@
-import Rating from '../../../schemas/genres';
+import Rating from '../../../schemas/ratings';
 import { RatingType } from '../../types/rating';
 import * as graphql from 'graphql';
 
