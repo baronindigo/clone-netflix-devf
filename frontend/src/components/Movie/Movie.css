@@ -1,0 +1,13 @@
+.img {
+    width: auto;
+    height: auto;
+}
+
+.btn-back,
+.btn-watch {
+    margin: 5px;
+}
+
+.movie-info {
+    color: #000;
+}
