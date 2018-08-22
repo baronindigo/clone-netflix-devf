@@ -35,7 +35,7 @@ var MovieSchema = new Schema({
         require: true
     },
     'rank': {
-        type: Number,
+        type: [Number],
         require: true
     },
     'duration': {

@@ -38,6 +38,11 @@ var _cors2 = _interopRequireDefault(_cors);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//import React from 'react';
+//import ReactDOM from 'react-dom';
+//import App from './components/App';
+//import registerServiceWorker from './registerServiceWorker';
+
 var jsonParser = _bodyParser2.default.json();
 
 var app = (0, _express2.default)();
@@ -61,9 +66,7 @@ app.listen(PORT, function () {
 
 app.use((0, _cors2.default)());
 
-app.get('/', function (req, res) {
-    res.send("Hello World");
-});
+app.get('/', function (req, res) {});
 
 app.get('/hola', function (req, res) {
     res.send("Hello hola");
@@ -150,18 +153,19 @@ app.use('/verifyToken', jsonParser, function (req, res) {
 });
 
 // Middleare
-app.use('/graphql', function (req, res, next) {
-    var token = req.headers['authorization'];
+/*
+app.use('/graphql', (req, res, next) => {
+    const token = req.headers['authorization']
 
     try {
-        req.user = (0, _verify.verifyToken)(token);
+        req.user = verifyToken(token)
         next();
-    } catch (e) {
+    } catch(e) {
         res.status(401).json({
             message: e.message
-        });
+        })
     }
-});
+});*/
 
 app.use('/graphql', (0, _expressGraphql2.default)(function (req, res) {
     return {
@@ -173,3 +177,6 @@ app.use('/graphql', (0, _expressGraphql2.default)(function (req, res) {
         }
     };
 }));
+
+//ReactDOM.render(<App />, document.getElementById('root'));
+//registerServiceWorker();
