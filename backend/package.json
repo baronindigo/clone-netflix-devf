@@ -22,10 +22,10 @@
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.2",
     "jsonwebtoken": "^8.3.0",
-    "mongoose": "^5.2.6",
+    "mongoose": "^5.7.7",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "^1.1.4"
+    "react-scripts": "^3.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
